@@ -5,37 +5,53 @@
 </ion-header>
 
 <ion-content>
-  <ion-item (click)="logout()">
-    <ion-icon slot="start" ios="exit-outline" md="exit-sharp"></ion-icon>
-    <ion-label>Logout</ion-label>
-  </ion-item>
-  <hr>
-  <h1>Selamat datang {{ nama }}</h1>
   
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">
-        Data Mahasiswa
+      <ion-title size="medium">
+        Data Menu
       </ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Halo, {{ nama }}</ion-card-title>
+      <!-- <ion-card-subtitle class="ion-margin-top">{{ nama }}</ion-card-subtitle> -->
+    </ion-card-header>
+  
+    <ion-card-content>
+      Anda adalah seorang administrator yang dapat menambah dan menerima pesanan.
+      <ion-button color="danger" slot="end" (click)="logout()">Logout</ion-button>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-list lines="full">
+  <ion-list class="ion-padding" lines="full">
     <ion-button type="button" [routerLink]="['/menu-tambah']" routerLinkActive="router-link-active" color="success"
-      expand="block"> Tambah Mahasiswa</ion-button>
-  </ion-list>
-  <ion-list>
-    <ion-list-header>List Data Mahaiswa</ion-list-header>
-  </ion-list>
+      expand="block"> Tambah Menu</ion-button>
+  </ion-list> 
+
   <ion-card lines="inset" *ngFor="let menu_value of menu">
+    <ion-card-header>
+      <ion-card-title>{{ menu_value.menu_nama }}</ion-card-title>
+      <ion-card-subtitle>Jumlah stok : {{ menu_value.menu_stok }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <!-- <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content> -->
+  
+    <ion-button fill="clear" color="warning" [routerLink]="['/menu-lihat/',menu_value.menu_id]"
+        routerLinkActive="router-link-active">Lihat</ion-button>
+      <ion-button fill="clear" color="success" [routerLink]="['/menu-edit/',menu_value.menu_id]"
+        routerLinkActive="router-link-active">Edit</ion-button>
+      <ion-button fill="clear" color="danger" (click)="deleteMahasiswa(menu_value.menu_id)">Hapus</ion-button>
+  </ion-card>
+
+  <!-- <ion-card >
     <ion-item>
       <ion-icon name="person" slot="start"></ion-icon>
       <ion-label>{{ menu_value.menu_nama }}</ion-label>
-      <ion-button color="warning" slot="end" [routerLink]="['/menu-lihat/',menu_value.menu_id]"
-        routerLinkActive="router-link-active">Lihat</ion-button>
-      <ion-button color="primary" slot="end" [routerLink]="['/menu-edit/',menu_value.menu_id]"
-        routerLinkActive="router-link-active">Edit</ion-button>
-      <ion-button color="danger" slot="end" (click)="deleteMahasiswa(menu_value.menu_id)">Hapus</ion-button>
+      
     </ion-item>
-  </ion-card>
+  </ion-card> -->
 </ion-content>

@@ -20,10 +20,6 @@ const routes: Routes = [
     canLoad: [AuthGuard]
   },
   {
-    path: 'tes-view',
-    loadChildren: () => import('./tes-view/tes-view.module').then( m => m.TesViewPageModule)
-  },
-  {
     path: 'menu-lihat',
     loadChildren: () => import('./menu-lihat/menu-lihat.module').then( m => m.MenuLihatPageModule)
   },
