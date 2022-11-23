@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'mahasiswa-edit/:nim',
     loadChildren: () => import('./mahasiswa-edit/mahasiswa-edit.module').then( m => m.MahasiswaEditPageModule)
+  },  {
+    path: 'tes-view',
+    loadChildren: () => import('./tes-view/tes-view.module').then( m => m.TesViewPageModule)
   }
+
 ];
 
 @NgModule({
