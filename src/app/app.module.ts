@@ -11,6 +11,7 @@ import { Network } from '@ionic-native/network/ngx';
 
 @NgModule({
   declarations: [AppComponent],
+  entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule],
   providers: [Network, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
