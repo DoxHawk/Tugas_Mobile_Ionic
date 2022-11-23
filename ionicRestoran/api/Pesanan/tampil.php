@@ -1,7 +1,7 @@
 <?php 
 require '../../koneksi.php';
 $data = [];
-$query = mysqli_query($koneksi,"select * from mahasiswa");
+$query = mysqli_query($koneksi,"SELECT * FROM tbl_pesanan");
 while ($row = mysqli_fetch_object($query)) {
 	$data[] = $row;
 }

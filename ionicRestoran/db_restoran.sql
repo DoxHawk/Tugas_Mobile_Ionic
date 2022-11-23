@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2022 at 02:54 PM
+-- Generation Time: Nov 23, 2022 at 09:37 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -39,11 +39,10 @@ CREATE TABLE `tbl_menu` (
 --
 
 INSERT INTO `tbl_menu` (`menu_id`, `menu_nama`, `menu_stok`, `menu_src`) VALUES
-(1, 'Bakso', 3, ''),
-(2, 'Ayam Panggang', 4, ''),
+(1, 'Bakso', 22, 'sss'),
+(2, 'Ayam Panggang', 41, ''),
 (3, 'Siomay', 3, ''),
-(4, 'Kwetiaw', 4, ''),
-(5, 'Nasi Goreng', 7, '');
+(4, 'Kwetiaw', 4, '');
 
 -- --------------------------------------------------------
 
@@ -54,6 +53,7 @@ INSERT INTO `tbl_menu` (`menu_id`, `menu_nama`, `menu_stok`, `menu_src`) VALUES
 CREATE TABLE `tbl_pesanan` (
   `pesanan_id` int(3) NOT NULL,
   `pesanan_user` int(3) NOT NULL,
+  `pesanan_menu` int(3) NOT NULL,
   `pesanan_qty` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -66,15 +66,16 @@ CREATE TABLE `tbl_pesanan` (
 CREATE TABLE `tbl_users` (
   `user_id` int(2) NOT NULL,
   `user_name` varchar(100) NOT NULL,
-  `user_password` varchar(255) NOT NULL
+  `user_password` varchar(255) NOT NULL,
+  `user_type` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_password`) VALUES
-(1, 'tes', '81dc9bdb52d04dc20036dbd8313ed055');
+INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_password`, `user_type`) VALUES
+(1, 'tes', '81dc9bdb52d04dc20036dbd8313ed055', 1);
 
 --
 -- Indexes for dumped tables

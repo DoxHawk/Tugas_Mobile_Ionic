@@ -1,8 +1,8 @@
 <?php 
 require '../../koneksi.php';
 $data = [];
-$nim = $_GET['nim'];
-$query = mysqli_query($koneksi,"select * from mahasiswa where nim ='$nim'");
+$pesanan_id = $_GET['pesanan_id'];
+$query = mysqli_query($koneksi,"SELECT * FROM tbl_pesanan WHERE pesanan_id ='$pesanan_id'");
 $jumlah = mysqli_num_rows($query);
 if ($jumlah == 1) {
 	$row = mysqli_fetch_object($query);

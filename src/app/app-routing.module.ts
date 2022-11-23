@@ -27,7 +27,7 @@ const routes: Routes = [
     path: 'menu-edit/:menu_id',
     loadChildren: () => import('./menu-edit/menu-edit.module').then( m => m.MenuEditPageModule)
   }
-
+ 
 
 ];
 

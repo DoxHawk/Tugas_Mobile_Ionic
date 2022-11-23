@@ -3,11 +3,10 @@ require '../../koneksi.php';
 $input = file_get_contents('php://input');
 $data = json_decode($input,true);
 $pesan = [];
-$nama = $data['nama'];
-$alamat = $data['alamat'];
-$nim = $data['nim'];
+$pesanan_qty = $data['pesanan_qty'];
+$pesanan_id = $data['pesanan_id'];
 
-$query = mysqli_query($koneksi,"update mahasiswa set nama='$nama',alamat='$alamat' where nim='$nim'");
+$query = mysqli_query($koneksi,"UPDATE tbl_pesanan SET pesanan_qty='$pesanan_qty' WHERE pesanan_id='$pesanan_id'");
 // if ($query) {
 // 	http_response_code(201);
 // 	$pesan['status'] = 'sukses';

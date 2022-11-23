@@ -3,8 +3,8 @@ require '../../koneksi.php';
 $input = file_get_contents('php://input');
 $pesan =[];
 
-$nim = $_GET['nim'];
-$query = mysqli_query($koneksi,"delete from mahasiswa where nim='$nim'");
+$pesanan_id = $_GET['pesanan_id'];
+$query = mysqli_query($koneksi,"DELETE FROM tbl_pesanan WHERE pesanan_id='$pesanan_id'");
 if ($query) {
 	http_response_code(201);
 	$pesan['status'] = 'sukses';
