@@ -18,11 +18,14 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule),
+<<<<<<< HEAD
     canLoad: [AdmnGuard]
   },
   {
     path: 'menu-lihat',
     loadChildren: () => import('./menu-lihat/menu-lihat.module').then( m => m.MenuLihatPageModule),
+=======
+>>>>>>> b579064e0c4b8b592a41cdfe4d2266171a646e95
     canLoad: [AuthGuard]
   },
   {
