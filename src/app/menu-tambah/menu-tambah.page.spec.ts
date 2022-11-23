@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { MahasiswaEditPage } from './mahasiswa-edit.page';
+import { MenuTambahPage } from './menu-tambah.page';
 
-describe('MahasiswaEditPage', () => {
-  let component: MahasiswaEditPage;
-  let fixture: ComponentFixture<MahasiswaEditPage>;
+describe('MenuTambahPage', () => {
+  let component: MenuTambahPage;
+  let fixture: ComponentFixture<MenuTambahPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MahasiswaEditPage ],
+      declarations: [ MenuTambahPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MahasiswaEditPage);
+    fixture = TestBed.createComponent(MenuTambahPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

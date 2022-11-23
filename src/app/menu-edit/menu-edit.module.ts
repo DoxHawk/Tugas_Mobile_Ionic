@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MahasiswaEditPageRoutingModule } from './mahasiswa-edit-routing.module';
+import { MenuEditPageRoutingModule } from './menu-edit-routing.module';
 
-import { MahasiswaEditPage } from './mahasiswa-edit.page';
+import { MenuEditPage } from './menu-edit.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MahasiswaEditPageRoutingModule
+    MenuEditPageRoutingModule
   ],
-  declarations: [MahasiswaEditPage]
+  declarations: [MenuEditPage]
 })
-export class MahasiswaEditPageModule {}
+export class MenuEditPageModule {}

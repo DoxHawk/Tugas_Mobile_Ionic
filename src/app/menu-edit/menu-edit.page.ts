@@ -4,13 +4,13 @@ import { AlertController, LoadingController } from "@ionic/angular";
 import { ApiService } from "../api.service";
 import { Http } from "@capacitor-community/http";
 
-
 @Component({
-  selector: 'app-mahasiswa-edit',
-  templateUrl: './mahasiswa-edit.page.html',
-  styleUrls: ['./mahasiswa-edit.page.scss'],
+  selector: 'app-menu-edit',
+  templateUrl: './menu-edit.page.html',
+  styleUrls: ['./menu-edit.page.scss'],
 })
-export class MahasiswaEditPage implements OnInit {
+export class MenuEditPage implements OnInit {
+
   menu_id: any;
   menu_nama: any;
   menu_stok: any;
@@ -88,5 +88,6 @@ export class MahasiswaEditPage implements OnInit {
       });
     })
   }
+
 
 }

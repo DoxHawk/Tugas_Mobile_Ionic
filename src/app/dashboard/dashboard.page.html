@@ -21,7 +21,7 @@
   </ion-header>
 
   <ion-list lines="full">
-    <ion-button type="button" [routerLink]="['/mahasiswa-tambah']" routerLinkActive="router-link-active" color="success"
+    <ion-button type="button" [routerLink]="['/menu-tambah']" routerLinkActive="router-link-active" color="success"
       expand="block"> Tambah Mahasiswa</ion-button>
   </ion-list>
   <ion-list>
@@ -31,7 +31,9 @@
     <ion-item>
       <ion-icon name="person" slot="start"></ion-icon>
       <ion-label>{{ menu_value.menu_nama }}</ion-label>
-      <ion-button color="primary" slot="end" [routerLink]="['/mahasiswa-edit/',menu_value.menu_id]"
+      <ion-button color="warning" slot="end" [routerLink]="['/menu-lihat/',menu_value.menu_id]"
+        routerLinkActive="router-link-active">Lihat</ion-button>
+      <ion-button color="primary" slot="end" [routerLink]="['/menu-edit/',menu_value.menu_id]"
         routerLinkActive="router-link-active">Edit</ion-button>
       <ion-button color="danger" slot="end" (click)="deleteMahasiswa(menu_value.menu_id)">Hapus</ion-button>
     </ion-item>
