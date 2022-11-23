@@ -51,6 +51,12 @@ export class MahasiswaEditPage implements OnInit {
 
   editMahasiswa() {
     let url = this._apiService.apiURL() + "/Menu/edit.php";
+    //
+    if(this.menu_src == null){
+      console.log("srcNull");
+      this.menu_src = "default";
+    }
+    //
     Http.request({
       method: "POST",
       url: url,
@@ -62,6 +68,7 @@ export class MahasiswaEditPage implements OnInit {
         menu_src: this.menu_src,
       },
     }).then((data) => {
+      console.log("berhasil");
       this.alertController.create({
         header: 'Notifikasi',
         message: 'Berhasil Edit Data Mahasiswa',
@@ -71,6 +78,7 @@ export class MahasiswaEditPage implements OnInit {
       });
       this.router.navigateByUrl('/dashboard');
     }, (err) => {
+      console.log("error", err);
       this.alertController.create({
         header: 'Notifikasi',
         message: 'Gagal Edit Data Mahasiswa',
