@@ -11,9 +11,10 @@ import { Http } from "@capacitor-community/http";
   styleUrls: ['./mahasiswa-edit.page.scss'],
 })
 export class MahasiswaEditPage implements OnInit {
-  nim: any;
-  nama: any;
-  alamat: any;
+  menu_id: any;
+  menu_nama: any;
+  menu_stok: any;
+  menu_src: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,23 +24,24 @@ export class MahasiswaEditPage implements OnInit {
     public LoadingController: LoadingController,
   ) {
     this.route.params.subscribe((param: any) => {
-      this.nim = param.nim;
-      console.log(this.nim);
-      this.ambilMahasiswa(this.nim);
+      this.menu_id = param.menu_id;
+      console.log(this.menu_id);
+      this.ambilMahasiswa(this.menu_id);
     })
   }
 
   ngOnInit() {
+    
   }
 
 
-  ambilMahasiswa(nim:any) {
-    this._apiService.ambilMahasiswa(nim).subscribe((res: any) => {
+  ambilMahasiswa(menu_id:any) {
+    this._apiService.ambilMahasiswa(menu_id).subscribe((res: any) => {
       console.log('sukses', res);
-      let mahasiswa = res;
+      let menu = res;
       //console.log(mahasiswa);
-      this.nama = mahasiswa.nama;
-      this.alamat = mahasiswa.alamat;
+      this.menu_nama = menu.menu_nama;
+      this.menu_stok = menu.menu_stok;
     }, (error: any) => {
       console.log('error', error);
       alert('gagal ambil data');
@@ -48,15 +50,16 @@ export class MahasiswaEditPage implements OnInit {
 
 
   editMahasiswa() {
-    let url = this._apiService.apiURL() + "/edit.php";
+    let url = this._apiService.apiURL() + "/Menu/edit.php";
     Http.request({
       method: "POST",
       url: url,
       headers: { "Content-Type": "application/json" },
       data: {
-        nim: this.nim,
-        nama: this.nama,
-        alamat: this.alamat,
+        menu_id: this.menu_id,
+        menu_nama: this.menu_nama,
+        menu_stok: this.menu_stok,
+        menu_src: this.menu_src,
       },
     }).then((data) => {
       this.alertController.create({
@@ -66,7 +69,7 @@ export class MahasiswaEditPage implements OnInit {
       }).then(res => {
         res.present();
       });
-      this.router.navigateByUrl('/mahasiswa');
+      this.router.navigateByUrl('/dashboard');
     }, (err) => {
       this.alertController.create({
         header: 'Notifikasi',
