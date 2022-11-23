@@ -19,7 +19,7 @@ export class AutoLoginGuard implements CanLoad {
       map((isAuthenticated) => {
         if(isAuthenticated){
           console.log('ada sesi login, redirect ke dashboard');
-          this.router.navigateByUrl('/mahasiswa', {replaceUrl: true});
+          this.router.navigateByUrl('/dashboard', {replaceUrl: true});
           return false;
         }else{
           console.log('tidak ada sesi login');

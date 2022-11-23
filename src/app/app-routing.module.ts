@@ -24,10 +24,6 @@ const routes: Routes = [
     canLoad: [AuthGuard]
   },
   {
-    path: 'mahasiswa',
-    loadChildren: () => import('./mahasiswa/mahasiswa.module').then( m => m.MahasiswaPageModule)
-  },
-  {
     path: 'mahasiswa-tambah',
     loadChildren: () => import('./mahasiswa-tambah/mahasiswa-tambah.module').then( m => m.MahasiswaTambahPageModule)
   },
