@@ -26,9 +26,9 @@ export class MahasiswaEditPage implements OnInit {
     this.route.params.subscribe((param: any) => {
       this.menu_id = param.menu_id;
       console.log(this.menu_id);
-      this.ambilMahasiswa(this.menu_id);
+      this.ambilMahasiswa(this.menu_id); 
     })
-  }
+  } 
 
   ngOnInit() {
     

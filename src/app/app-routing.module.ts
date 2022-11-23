@@ -28,9 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('./mahasiswa-tambah/mahasiswa-tambah.module').then( m => m.MahasiswaTambahPageModule)
   },
   {
-    path: 'mahasiswa-edit/:nim',
+    path: 'mahasiswa-edit/:menu_id',
     loadChildren: () => import('./mahasiswa-edit/mahasiswa-edit.module').then( m => m.MahasiswaEditPageModule)
-  },  {
+  },
+  {
     path: 'tes-view',
     loadChildren: () => import('./tes-view/tes-view.module').then( m => m.TesViewPageModule)
   }
