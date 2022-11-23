@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2022 at 02:54 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Nov 23, 2022 at 05:47 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,9 +53,17 @@ INSERT INTO `tbl_menu` (`menu_id`, `menu_nama`, `menu_stok`, `menu_src`) VALUES
 
 CREATE TABLE `tbl_pesanan` (
   `pesanan_id` int(3) NOT NULL,
+  `menu__id` int(3) NOT NULL,
   `pesanan_user` int(3) NOT NULL,
   `pesanan_qty` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_pesanan`
+--
+
+INSERT INTO `tbl_pesanan` (`pesanan_id`, `menu__id`, `pesanan_user`, `pesanan_qty`) VALUES
+(1, 3, 12, 4);
 
 -- --------------------------------------------------------
 
@@ -112,7 +120,7 @@ ALTER TABLE `tbl_menu`
 -- AUTO_INCREMENT for table `tbl_pesanan`
 --
 ALTER TABLE `tbl_pesanan`
-  MODIFY `pesanan_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `pesanan_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`

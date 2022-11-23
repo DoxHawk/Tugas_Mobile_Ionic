@@ -17,6 +17,10 @@ export class ApiService {
     return "http://localhost/ionicRestoran/api";
   }
 
+  getPesanan() {
+    return this.http.get(this.apiURL() + '/Pesanan/tampil.php');
+  }
+
   getMahasiswa() {
     return this.http.get(this.apiURL() + '/Menu/tampil.php');
   }
