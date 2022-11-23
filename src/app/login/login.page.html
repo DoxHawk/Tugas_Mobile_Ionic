@@ -3,16 +3,17 @@
     <ion-title>login</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-item lines="full">
+<ion-content class="ion-padding">
+  <ion-img src="http://localhost/ionicRestoran/img/login.svg" alt="Gambar orang login"></ion-img>
+  <ion-item lines="full" class="ion-margin-top">
     <ion-label position="floating">Username</ion-label>
     <ion-input type="text" [(ngModel)]="username" required="required"></ion-input>
   </ion-item>
-  <ion-item lines="full">
+  <ion-item lines="full" class="ion-margin-top">
     <ion-label position="floating">Password</ion-label>
     <ion-input type="password" [(ngModel)]="password" required="required"></ion-input>
   </ion-item>
-  <ion-row>
+  <ion-row class="ion-margin-top">
     <ion-col>
       <ion-button type="submit" color="primary" expand="block" (click)="login()">Login</ion-button>
     </ion-col>
