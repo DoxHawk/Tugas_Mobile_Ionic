@@ -27,10 +27,10 @@
   <ion-list>
     <ion-list-header>List Data Mahaiswa</ion-list-header>
   </ion-list>
-  <ion-card lines="inset" *ngFor="let mahasiswa_value of mahasiswa">
+  <ion-card lines="inset" *ngFor="let mahasiswa_value of menu">
     <ion-item>
       <ion-icon name="person" slot="start"></ion-icon>
-      <ion-label>{{ mahasiswa_value.nama }}</ion-label>
+      <ion-label>{{ mahasiswa_value.menu_nama }}</ion-label>
       <ion-button color="primary" slot="end" [routerLink]="['/mahasiswa-edit/',mahasiswa_value.nim]"
         routerLinkActive="router-link-active">Edit</ion-button>
       <ion-button color="danger" slot="end" (click)="deleteMahasiswa(mahasiswa_value.nim)">Hapus</ion-button>

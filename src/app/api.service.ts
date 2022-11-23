@@ -18,15 +18,15 @@ export class ApiService {
   }
 
   getMahasiswa() {
-    return this.http.get(this.apiURL() + '/tampil.php');
+    return this.http.get(this.apiURL() + '/Menu/tampil.php');
   }
 
   deleteMahasiswa(id:any) {
-    return this.http.delete(this.apiURL() + '/hapus.php?nim=' + id);
+    return this.http.delete(this.apiURL() + '/Menu/hapus.php?id=' + id);
   }
 
   ambilMahasiswa(id:any) {
-    return this.http.get(this.apiURL() + '/lihat.php?nim=' + id);
+    return this.http.get(this.apiURL() + '/Menu/lihat.php?id=' + id);
   }
 
 

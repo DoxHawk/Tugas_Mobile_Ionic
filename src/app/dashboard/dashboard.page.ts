@@ -16,7 +16,7 @@ export class DashboardPage implements OnInit {
   nim: any;
   name: any;
   alamat: any;
-  mahasiswa: any[];
+  menu: any[];
   constructor(
     public _apiService: ApiService,
     private authService: AuthenticationService, 
@@ -74,7 +74,7 @@ export class DashboardPage implements OnInit {
   getMahasiswa() {
     this._apiService.getMahasiswa().subscribe((res: any) => {
       console.log("sukses", res);
-      this.mahasiswa = res;
+      this.menu = res;
     }, (error: any) => {
       console.log("gagal", error);
       this.alertController.create({
