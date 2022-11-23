@@ -14,7 +14,7 @@ export class ApiService {
 
   //link API
   apiURL() {
-    return "http://localhost/authguard/api";
+    return "http://localhost/ionicRestoran/api";
   }
 
   getMahasiswa() {

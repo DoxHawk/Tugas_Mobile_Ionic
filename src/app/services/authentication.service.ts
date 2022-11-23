@@ -26,7 +26,7 @@ export class AuthenticationService {
     }
   }
   apiURL(){
-    return "http://localhost/authguard/";
+    return "http://localhost/ionicRestoran/";
   }
   logout(): Promise<void>{
     this.isAuthenticated.next(false);
