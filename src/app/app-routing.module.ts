@@ -24,17 +24,22 @@ const routes: Routes = [
     canLoad: [AuthGuard]
   },
   {
-    path: 'mahasiswa-tambah',
-    loadChildren: () => import('./mahasiswa-tambah/mahasiswa-tambah.module').then( m => m.MahasiswaTambahPageModule)
-  },
-  {
-    path: 'mahasiswa-edit/:menu_id',
-    loadChildren: () => import('./mahasiswa-edit/mahasiswa-edit.module').then( m => m.MahasiswaEditPageModule)
-  },
-  {
     path: 'tes-view',
     loadChildren: () => import('./tes-view/tes-view.module').then( m => m.TesViewPageModule)
+  },
+  {
+    path: 'menu-lihat',
+    loadChildren: () => import('./menu-lihat/menu-lihat.module').then( m => m.MenuLihatPageModule)
+  },
+  {
+    path: 'menu-tambah',
+    loadChildren: () => import('./menu-tambah/menu-tambah.module').then( m => m.MenuTambahPageModule)
+  },
+  {
+    path: 'menu-edit/:menu_id',
+    loadChildren: () => import('./menu-edit/menu-edit.module').then( m => m.MenuEditPageModule)
   }
+
 
 ];
 

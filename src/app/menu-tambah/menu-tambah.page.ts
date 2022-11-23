@@ -3,13 +3,13 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { AlertController, LoadingController } from "@ionic/angular";
 import { ApiService } from "../api.service";
 import { Http } from "@capacitor-community/http";
-
 @Component({
-  selector: 'app-mahasiswa-tambah',
-  templateUrl: './mahasiswa-tambah.page.html',
-  styleUrls: ['./mahasiswa-tambah.page.scss'],
+  selector: 'app-menu-tambah',
+  templateUrl: './menu-tambah.page.html',
+  styleUrls: ['./menu-tambah.page.scss'],
 })
-export class MahasiswaTambahPage implements OnInit {
+export class MenuTambahPage implements OnInit {
+
   nim: any;
   alamat: any;
   nama: any;
@@ -59,5 +59,6 @@ export class MahasiswaTambahPage implements OnInit {
       });
     })
   }
+
 
 }
