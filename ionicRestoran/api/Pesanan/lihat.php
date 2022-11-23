@@ -1,5 +1,5 @@
 <?php 
-require 'koneksi.php';
+require '../../koneksi.php';
 $data = [];
 $nim = $_GET['nim'];
 $query = mysqli_query($koneksi,"select * from mahasiswa where nim ='$nim'");

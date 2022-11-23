@@ -1,0 +1,23 @@
+<?php 
+require '../../koneksi.php';
+$input = file_get_contents('php://input');
+$data = json_decode($input,true);
+$pesan = [];
+$menu_nama = trim($data['menu_nama']);
+$menu_stok = trim($data['menu_stok']);
+$menu_src = trim($data['menu_src']);
+if ($nim != '' and $nama != '' and $alamat != '') {
+	$query = mysqli_query($koneksi,"INSERT INTO tbl_menu(menu_nama,menu_stok,menu_Src) value ('$menu_nama','$menu_stok','$menu_src')");
+}
+// else{
+// 	$query = mysqli_query($koneksi,"DELETE FROM tbl_menu WHERE menu_id='$nim'");
+// }
+// if ($query) {
+// 	http_response_code(201);
+// 	$pesan['status'] = 'sukses';
+// }else{
+// 	http_response_code(422);
+// 	$pesan['status'] = 'gagal';
+// }
+echo json_encode($pesan);
+echo mysqli_error($koneksi);

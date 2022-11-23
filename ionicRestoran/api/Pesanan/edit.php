@@ -1,5 +1,5 @@
 <?php 
-require 'koneksi.php';
+require '../../koneksi.php';
 $input = file_get_contents('php://input');
 $data = json_decode($input,true);
 $pesan = [];

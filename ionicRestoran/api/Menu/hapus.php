@@ -1,10 +1,10 @@
 <?php 
-require 'koneksi.php';
+require '../../koneksi.php';
 $input = file_get_contents('php://input');
 $pesan =[];
 
-$nim = $_GET['nim'];
-$query = mysqli_query($koneksi,"delete from mahasiswa where nim='$nim'");
+$menu_id = $_GET['id'];
+$query = mysqli_query($koneksi,"DELETE FROM tbl_menu WHERE menu_id='$menu_id'");
 if ($query) {
 	http_response_code(201);
 	$pesan['status'] = 'sukses';
@@ -15,5 +15,3 @@ if ($query) {
 
 echo json_encode($pesan);
 echo mysqli_error($koneksi);
-
- ?>
