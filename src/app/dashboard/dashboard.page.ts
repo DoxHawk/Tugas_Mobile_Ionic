@@ -17,6 +17,8 @@ export class DashboardPage implements OnInit {
   name: any;
   alamat: any;
   menu: any[];
+  isModalOpen = false;
+  
   constructor(
     public _apiService: ApiService,
     private authService: AuthenticationService, 
@@ -28,6 +30,10 @@ export class DashboardPage implements OnInit {
   ngOnInit() {
     this.cekSesi();
     console.log(this.nama);
+  }
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
   }
 
   async cekSesi(){

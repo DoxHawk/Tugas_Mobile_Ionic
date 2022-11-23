@@ -15,36 +15,61 @@
   </ion-header>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Halo, {{ nama }}</ion-card-title>
+      <ion-card-title style="font-weight: 700;">Halo, {{ nama }}</ion-card-title>
       <!-- <ion-card-subtitle class="ion-margin-top">{{ nama }}</ion-card-subtitle> -->
     </ion-card-header>
   
     <ion-card-content>
       Anda adalah seorang administrator yang dapat menambah dan menerima pesanan.
-      <ion-button color="danger" slot="end" (click)="logout()">Logout</ion-button>
+      <ion-button color="danger" slot="end" (click)="logout()" style="text-transform:none!important;">Logout</ion-button>
     </ion-card-content>
   </ion-card>
 
   <ion-list class="ion-padding" lines="full">
     <ion-button type="button" [routerLink]="['/menu-tambah']" routerLinkActive="router-link-active" color="success"
-      expand="block"> Tambah Menu</ion-button>
+      expand="block" style="text-transform:none!important;"> Tambah Menu</ion-button>
   </ion-list> 
 
   <ion-card lines="inset" *ngFor="let menu_value of menu">
     <ion-card-header>
-      <ion-card-title>{{ menu_value.menu_nama }}</ion-card-title>
+      <ion-card-title style="font-weight: 600;">{{ menu_value.menu_nama }}</ion-card-title>
       <ion-card-subtitle>Jumlah stok : {{ menu_value.menu_stok }}</ion-card-subtitle>
     </ion-card-header>
   
     <!-- <ion-card-content>
       Here's a small text description for the card content. Nothing more, nothing less.
     </ion-card-content> -->
+
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Detail Menu</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Tutup</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-card>
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            <ion-card-header>
+              <ion-card-title>{{ menu_value.menu_nama }}</ion-card-title>
+              <ion-card-subtitle>Jumlah stok : {{ menu_value.menu_stok }}</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+              Here's a small text description for the card content. Nothing more, nothing less.
+            </ion-card-content>
+          </ion-card>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
   
-    <ion-button fill="clear" color="warning" [routerLink]="['/menu-lihat/',menu_value.menu_id]"
-        routerLinkActive="router-link-active">Lihat</ion-button>
+    <ion-button fill="clear" color="warning" (click)="setOpen(true)" style="text-transform:none!important;">Lihat</ion-button>
       <ion-button fill="clear" color="success" [routerLink]="['/menu-edit/',menu_value.menu_id]"
-        routerLinkActive="router-link-active">Edit</ion-button>
-      <ion-button fill="clear" color="danger" (click)="deleteMahasiswa(menu_value.menu_id)">Hapus</ion-button>
+        routerLinkActive="router-link-active" style="text-transform:none!important;">Edit</ion-button>
+      <ion-button fill="clear" color="danger" (click)="deleteMahasiswa(menu_value.menu_id)" style="text-transform:none!important;">Hapus</ion-button>
   </ion-card>
 
   <!-- <ion-card >
