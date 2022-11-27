@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { AlertController, LoadingController } from "@ionic/angular";
 import { ApiService } from "../api.service";
 import { Http } from "@capacitor-community/http";
+
 @Component({
   selector: 'app-menu-tambah',
   templateUrl: './menu-tambah.page.html',
@@ -10,49 +11,64 @@ import { Http } from "@capacitor-community/http";
 })
 export class MenuTambahPage implements OnInit {
 
-  nim: any;
-  alamat: any;
-  nama: any;
+  menu_id: any;
+  menu_nama: any; 
+  menu_stok: any;
+  menu_src: any;
+
   constructor(
-    private route: ActivatedRoute,
     private router: Router,
     public _apiService: ApiService,
     private alertController: AlertController,
     public loadingController: LoadingController,
 
-  ) { }
+  ) {
+    
+  }
 
   ngOnInit() {
   }
 
-  addMahasiswa() {
-    let url = this._apiService.apiURL() + "/tambah.php";
+  addMenu() {
+    let url = this._apiService.apiURL() + "/Menu/tambah.php";
+    //
+    if(this.menu_src == null){
+      console.log("srcNull");
+      this.menu_src = "default";
+    }
+    //
+    this.menu_id = '';
     Http.request({
       method: "POST",
       url: url,
       headers: { "Content-Type": "application/json" },
       data: {
-        nim: this.nim,
-        nama: this.nama,
-        alamat: this.alamat
+        menu_id: this.menu_id,
+        menu_nama: this.menu_nama,
+        menu_stok: this.menu_stok,
+        menu_src: this.menu_src
       },
     }).then((data) => {
-      this.nim = '';
-      this.nama = '';
-      this.alamat = '';
+      /*
+      this.menu_id = '';
+      this.menu_nama = 'nama';
+      this.menu_stok = '2';
+      this.menu_src = 'default';
+      */
+      console.log("berhasil");
       this.alertController.create({
         header: 'Notifikasi',
-        message: 'Berhasil Input data Mahasiswa',
+        message: 'Berhasil Input data Menu',
         buttons: ['OK'],
       }).then(res => {
         res.present();
       });
-      this.router.navigateByUrl('/mahasiswa');
+      this.router.navigateByUrl('/dashboard');
     }, (error) => {
       console.log(error);
       this.alertController.create({
         header: 'Notifikasi',
-        message: 'Gagal Input data Mahasiswa',
+        message: 'Gagal Input data Menu',
         buttons: ['OK'],
       }).then(res => {
         res.present();

@@ -21,7 +21,6 @@
   
     <ion-card-content>
       Anda adalah seorang administrator yang dapat menambah dan menerima pesanan.
-      <ion-button color="danger" slot="end" (click)="logout()" style="text-transform:none!important;">Logout</ion-button>
     </ion-card-content>
   </ion-card>
 
@@ -80,3 +79,32 @@
     </ion-item>
   </ion-card> -->
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="Home">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="Menu">
+          <ion-icon name="fast-food"></ion-icon>
+          <ion-label>Menu</ion-label>
+        </ion-tab-button>    
+  
+        <ion-tab-button tab="Pesanan">
+          <ion-icon name="list"></ion-icon>
+          <ion-label>Pesanan</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="Logout" (click)="logout()">
+          <ion-icon name="exit"></ion-icon>
+          <ion-label>Logout</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

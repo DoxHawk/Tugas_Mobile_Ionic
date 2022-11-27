@@ -23,12 +23,12 @@ const routes: Routes = [
   {
     path: 'menu-tambah',
     loadChildren: () => import('./menu-tambah/menu-tambah.module').then( m => m.MenuTambahPageModule),
-    canLoad: [AuthGuard]
+    canLoad: [AdmnGuard]
   },
   {
     path: 'menu-edit/:menu_id',
     loadChildren: () => import('./menu-edit/menu-edit.module').then( m => m.MenuEditPageModule),
-    canLoad: [AuthGuard]
+    canLoad: [AdmnGuard]
   },
   {
     path: 'pesanan',
