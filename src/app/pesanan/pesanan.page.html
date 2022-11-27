@@ -29,10 +29,10 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-card lines="inset" *ngFor="let menu_value of menu">
-    <ion-item>
+  <ion-card lines="inset" >
+    <img alt="Fast Food" src="http://localhost/ionicRestoran/img/fast-food-sharp.svg" />
+      <ion-item *ngFor="let menu_value of menu">
       <ion-card>
-        <img alt="Fast Food" src="http://localhost/ionicRestoran/img/fast-food-sharp.svg" />
         <ion-card-header>
           <ion-card-title>{{ menu_value.menu_nama }}</ion-card-title>
           <ion-card-subtitle>Jumlah stok : {{ menu_value.menu_stok }}</ion-card-subtitle>
@@ -45,6 +45,12 @@
     </ion-item>
   </ion-card>
 
+  
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
   <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="Menu">
@@ -68,5 +74,5 @@
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
-
-</ion-content>
+</ion-toolbar>
+</ion-footer>
